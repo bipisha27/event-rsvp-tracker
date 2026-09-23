@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const eventsRouter = require('./routes/events')
+const rsvpsRouter = require('./routes/rsvps')
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.get('/api/ping', (req, res) => {
 })
 
 app.use('/api/events', eventsRouter)
+app.use('/api/rsvps', rsvpsRouter)
 
 const PORT = process.env.PORT || 4000
 
