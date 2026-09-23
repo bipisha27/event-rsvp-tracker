@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const eventsRouter = require('./routes/events')
 
 const app = express()
 
@@ -11,6 +12,8 @@ app.use(express.json())
 app.get('/api/ping', (req, res) => {
   res.send('pong')
 })
+
+app.use('/api/events', eventsRouter)
 
 const PORT = process.env.PORT || 4000
 
