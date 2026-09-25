@@ -19,4 +19,13 @@ router.post('/', async(req, res) => {
   }
 })
 
+router.get('/event/:eventId', async(req, res) => {
+  try{
+    const rsvps = await Rsvp.find({event: req.params.eventId})
+    res.json(rsvps)
+  } catch(error) {
+    res.status(400).json({error: error.message})
+  }
+})
+
 module.exports = router 
