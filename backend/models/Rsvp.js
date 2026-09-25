@@ -10,6 +10,10 @@ const rsvpSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  email:{
+    type: String,
+    required: true
+  },
   response: {
     type: String,
     enum: ['yes', 'no', 'maybe'],
