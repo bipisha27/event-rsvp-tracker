@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CreateEvent/>} />
           <Route path="/event/:eventId/rsvp" element={<RsvpForm />} />
-          <Route path="/event/:eventId/results" elements={<EventResults />} />
+          <Route path="/event/:eventId/results" element={<EventResults />} />
         </Routes>
       </div>
     </BrowserRouter>
