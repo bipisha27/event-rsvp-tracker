@@ -1,0 +1,127 @@
+:root {
+  --heading-font: 'Playfair Display', Georgia, serif;
+  --body-font: 'Inter', sans-serif;
+
+  --accent-1: #D85A30;
+  --accent-2: #D4537E;
+
+  --yes-bg: #EAF3DE;
+  --yes-text: #173404;
+  --no-bg: #FCEBEB;
+  --no-text: #501313;
+  --maybe-bg: #FAEEDA;
+  --maybe-text: #412402;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: #FFF9F2;
+  background-image:
+    radial-gradient(#F0997B33 2px, transparent 2px),
+    radial-gradient(#D4537E22 1.5px, transparent 1.5px);
+  background-size: 26px 26px, 26px 26px;
+  background-position: 0 0, 13px 13px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .card-title, .navbar-brand, label.form-label {
+  font-family: var(--heading-font) !important;
+  font-weight: 500;
+}
+
+.app-navbar {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2)) !important;
+}
+
+.card {
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(216, 90, 48, 0.1);
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.form-control, .form-select {
+  border-radius: 12px;
+  border: 1px solid #F0DACE;
+  font-family: var(--body-font);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 0.2rem rgba(212, 83, 126, 0.15);
+}
+
+.badge-yes { background: var(--yes-bg); color: var(--yes-text); }
+.badge-no { background: var(--no-bg); color: var(--no-text); }
+.badge-maybe { background: var(--maybe-bg); color: var(--maybe-text); }
+
+.stat-card {
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-card.yes { background: var(--yes-bg); color: var(--yes-text); }
+.stat-card.no { background: var(--no-bg); color: var(--no-text); }
+.stat-card.maybe { background: var(--maybe-bg); color: var(--maybe-text); }
+
+.event-hero {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #ffffff;
+  padding: 28px 24px;
+}
+
+.event-hero h1 {
+  color: #ffffff !important;
+  margin-bottom: 6px;
+  font-size: 28px;
+}
+
+.event-hero p {
+  color: #FCEBEB;
+  margin: 0;
+  font-family: var(--body-font) !important;
+}
+
+.event-tagline {
+  font-family: var(--heading-font) !important;
+  font-style: italic;
+  color: var(--accent-1);
+}
+
+.invite-box {
+  background: var(--maybe-bg);
+  border: 1px solid #F0DACE;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #4A1B0C;
+}
+
+.invite-box code {
+  color: var(--accent-2);
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.rsvp-table thead th {
+  background: var(--maybe-bg);
+  color: #4A1B0C;
+  border: none;
+}
+
+.rsvp-table tbody tr:hover {
+  background: #FFF3EA;
+}

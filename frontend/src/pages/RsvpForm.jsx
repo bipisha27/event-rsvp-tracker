@@ -34,7 +34,7 @@ function RsvpForm() {
     }
   }
   if(error && !event) {
-    return <p>{error}</p>
+    return <div className="alert alert-danger">{error}</div>
   }
 
   if(!event) {
@@ -42,14 +42,24 @@ function RsvpForm() {
   }
 
   if(submitted) {
-    return <h2>Thanks for your RSVP!</h2>
+    return(
+      <div className="card shadow-sm">
+        <div className="card-body text-center">
+          <h2>Thanks for your RSVP!</h2>
+        </div>
+      </div>
+    )
   }
 
   return(
-    <div>
-      <h1>{event.title}</h1>
-      <p>{new Date(event.date).toLocaleDateString()} - {event.location}</p>
-      {event.description && <p>{event.description}</p>}
+    <div className="card shadow-sm">
+      <div className="event-hero">
+      <h2>{event.title}</h2>
+      <p> 📅 {new Date(event.date).toLocaleDateString()} &nbsp;📍{event.location}</p>
+
+      <div className="card-body">
+      {event.description && <p className="mb-4">{event.description}</p>}
+      </div>
 
       {error && <div className="alert alert-danger">{error}</div>}
 
@@ -94,6 +104,7 @@ function RsvpForm() {
         </button>
       </form>
     </div>
+  </div>
   )
 }
 

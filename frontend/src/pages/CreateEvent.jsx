@@ -21,6 +21,16 @@ function CreateEvent() {
       })
 
       const newEvent = response.data
+
+      const myEvents = JSON.parse(localStorage.getItem('myEvents') || '[]')
+      myEvents.push({
+          id: newEvent._id,
+          title: newEvent.title,
+          date: newEvent.date,
+          hostKey: newEvent.hostKey
+      })
+      localStorage.setItem('myEvents', JSON.stringify(myEvents))
+      
       navigate(`/event/${newEvent._id}/results?key=${newEvent.hostKey}`)
     } catch(error) {
       console.log(error)
@@ -29,8 +39,9 @@ function CreateEvent() {
   }
 
   return(
-    <div>
-      <h1>Create Event</h1>
+    <div className="card shadow-sm">
+      <div className="card-body">
+      <h2 className="card-title mb-4">Create an Event</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Title</label>
@@ -78,6 +89,7 @@ function CreateEvent() {
           Create Event
         </button>
       </form>
+      </div>
     </div>
   )
 }
