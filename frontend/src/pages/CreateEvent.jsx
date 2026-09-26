@@ -21,7 +21,7 @@ function CreateEvent() {
       })
 
       const newEvent = response.data
-      navigate(`/event/${newEvent._id}/results`)
+      navigate(`/event/${newEvent._id}/results?key=${newEvent.hostKey}`)
     } catch(error) {
       console.log(error)
       alert('Something went wrong creating the event.')

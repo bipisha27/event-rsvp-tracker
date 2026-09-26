@@ -1,17 +1,21 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 
 function EventResults() {
   const { eventId } = useParams()
+
+  const [ searchParams ] = useSearchParams()
+  const hostKey = searchParams.get('key')
+
   const [event, setEvent] = useState(null)
   const [rsvps, setRsvps] = useState([])
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/events/${eventId}`)
+    axios.get(`http://localhost:4000/api/events/${eventId}/host?key=${hostKey}`)
       .then(result => setEvent(result.data))
-      .catch(() => setError('Event not found.'))
+      .catch(() => setError('Invalid or missing host key.'))
 
     axios.get(`http://localhost:4000/api/rsvps/event/${eventId}`)
       .then(result => setRsvps(result.data))
